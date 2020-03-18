@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movie_catalog/common/theme.dart';
 import 'package:movie_catalog/model/data.dart';
+import 'package:movie_catalog/widgets/rating.dart';
+import 'package:movie_catalog/widgets/save_icon.dart';
 
 class DetailScreen extends StatefulWidget {
   final index;
@@ -34,10 +36,14 @@ class _DetailScreenState extends State<DetailScreen> {
                 padding: EdgeInsets.all(6),
                 child: Column(
                   children: <Widget>[
-                    Text(
+                    ListTile(
+                      leading: Rating(movies[widget.index].rating),
+                      title: Text(
                       movies[widget.index].title,
                       style: titleStyle,
                       textAlign: TextAlign.left,
+                    ),
+                    trailing: SaveIcon(widget.index),
                     ),
                     SizedBox(height: 10),
                     Text(
