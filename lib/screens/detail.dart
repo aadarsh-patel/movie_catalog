@@ -42,6 +42,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       movies[widget.index].title,
                       style: titleStyle,
                       textAlign: TextAlign.left,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     trailing: SaveIcon(widget.index),
                     ),

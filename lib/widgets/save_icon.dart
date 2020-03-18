@@ -23,7 +23,8 @@ class _SaveIconState extends State<SaveIcon> {
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(
-        movies[widget.movieListIndex].isSaved ? Icons.star : Icons.star_border,
+        movies[widget.movieListIndex].isSaved ? Icons.bookmark : Icons.bookmark_border,
+        size: 32,
         color: Colors.white,
       ),
       onPressed: _changeSave,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_catalog/common/theme.dart';
 import 'package:movie_catalog/screens/browse.dart';
+import 'package:movie_catalog/screens/bookmark_list.dart';
 
 void main() => runApp(MyApp());
 
@@ -37,17 +38,18 @@ class _MyHomePageState extends State<MyHomePage> {
             fontWeight: FontWeight.w700,
           ),
         ),
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 4, 12, 4),
-            child: Icon(
-              Icons.star,
-              size: 28,
+        actions: [
+          Builder(
+            builder: (context) => IconButton(
+              icon: Icon(Icons.collections_bookmark,size: 30,),
+              onPressed: () => Scaffold.of(context).openEndDrawer(),
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
             ),
-          )
+          ),
         ],
       ),
       body: BrowseScreen(),
+      endDrawer: BookmarkList(),
     );
   }
 }
