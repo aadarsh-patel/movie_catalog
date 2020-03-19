@@ -41,10 +41,14 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           Builder(
             builder: (context) => IconButton(
-              icon: Icon(Icons.collections_bookmark,size: 30,),
-              onPressed: () => Scaffold.of(context).openEndDrawer(),
-              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-            ),
+                icon: Icon(
+                  Icons.collections_bookmark,
+                  size: 30,
+                ),
+                onPressed: () => showBottomSheet(
+                      context: context,
+                      builder: (BuildContext context) => BookmarkList(),
+                    )),
           ),
         ],
       ),

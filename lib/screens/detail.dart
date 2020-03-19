@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movie_catalog/common/theme.dart';
 import 'package:movie_catalog/model/data.dart';
+import 'package:movie_catalog/widgets/bookmark_icon.dart';
 import 'package:movie_catalog/widgets/rating.dart';
-import 'package:movie_catalog/widgets/save_icon.dart';
 
 class DetailScreen extends StatefulWidget {
   final index;
@@ -44,7 +44,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                     ),
-                    trailing: SaveIcon(widget.index),
+                    trailing: BookmarkIcon(widget.index),
                     ),
                     SizedBox(height: 10),
                     Text(

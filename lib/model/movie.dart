@@ -8,7 +8,7 @@ class Movie {
   final double rating;
   int likes;
   int dislikes;
-  bool isSaved;
+  bool isBookmarked;
 
   Movie({
     Key key,
@@ -19,7 +19,7 @@ class Movie {
     @required this.rating,
     this.likes = 0,
     this.dislikes = 0,
-    this.isSaved = false,
+    this.isBookmarked = false,
   });
 
   void like() => likes++;
