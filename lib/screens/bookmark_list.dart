@@ -29,8 +29,15 @@ class _BookmarkListState extends State<BookmarkList> {
               child: ListView.builder(
                 itemCount: _bookmarkList.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(_bookmarkList[index].title),
+                  return Dismissible(
+                    key: new Key(_bookmarkList[index].title),
+                    onDismissed: (direction) {
+                      _bookmarkList[index].isBookmarked = false;
+                      _bookmarkList.removeAt(index);
+                    },
+                    child: ListTile(
+                      title: Text(_bookmarkList[index].title),
+                    ),
                   );
                 },
               ),
