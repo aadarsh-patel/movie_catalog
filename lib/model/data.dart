@@ -31,5 +31,7 @@ List<Movie> movies = [
         'While the First Order continues to ravage the galaxy, Rey finalizes her training as a Jedi. But danger suddenly rises from the ashes as the evil Emperor Palpatine mysteriously returns from the dead. While working with Finn and Poe Dameron to fulfill a new mission, Rey will not only face Kylo Ren once more, but she will also finally discover the truth about her parents as well as a deadly secret that could determine her future and the fate of the ultimate final showdown that is to come. ',
     image: 'assets/images/starwars.jpg',
     rating: 6.8,
+    likes: 20,
+    dislikes: 3,
   ),
 ];

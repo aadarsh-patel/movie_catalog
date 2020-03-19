@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_catalog/common/theme.dart';
 import 'package:movie_catalog/model/data.dart';
-import 'package:movie_catalog/widgets/bookmark_icon.dart';
+import 'package:movie_catalog/widgets/button_group.dart';
 import 'package:movie_catalog/widgets/rating.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -39,13 +39,14 @@ class _DetailScreenState extends State<DetailScreen> {
                     ListTile(
                       leading: Rating(movies[widget.index].rating),
                       title: Text(
-                      movies[widget.index].title,
-                      style: titleStyle,
-                      textAlign: TextAlign.left,
-                      overflow: TextOverflow.ellipsis,
+                        movies[widget.index].title,
+                        style: titleStyle,
+                        textAlign: TextAlign.left,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
-                    trailing: BookmarkIcon(widget.index),
-                    ),
+                    SizedBox(height: 10),
+                    ButtonGroup(widget.index),
                     SizedBox(height: 10),
                     Text(
                       movies[widget.index].description,

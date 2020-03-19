@@ -63,24 +63,16 @@ class _BrowseScreenState extends State<BrowseScreen> {
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(30, 40, 90, 200),
                     child: GestureDetector(
-                        onTap: () => Navigator.push(
-                              context,
-                              // PageRouteBuilder(
-                              //   pageBuilder:
-                              //       (context, animation1, animation2) =>
-                              //           DetailScreen(index),
-                              // ),
-                              // MyCustomPageRoute(
-                              //     previousPage: widget,
-                              //     builder: (context) => DetailScreen(index)),
-                              PageRouteBuilder(
-                                pageBuilder: (c, a1, a2) => DetailScreen(index),
-                                transitionsBuilder: (c, anim, a2, child) =>
-                                    FadeTransition(opacity: anim, child: child),
-                                transitionDuration:
-                                    Duration(milliseconds: 800),
-                              ),
-                            )),
+                      onTap: () => Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                          pageBuilder: (ctx, anim1, anim2) => DetailScreen(index),
+                          transitionsBuilder: (ctx, anim1, anim2, child) =>
+                              FadeTransition(opacity: anim1, child: child),
+                          transitionDuration: Duration(milliseconds: 800),
+                        ),
+                      ),
+                    ),
                   ),
                 );
               },
@@ -136,18 +128,22 @@ class CardScrollWidget extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16.0),
               child: Container(
-                decoration: BoxDecoration(color: Colors.white, boxShadow: [
-                  BoxShadow(
-                      color: Colors.black12,
-                      offset: Offset(3.0, 6.0),
-                      blurRadius: 10.0)
-                ]),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black12,
+                        offset: Offset(3.0, 6.0),
+                        blurRadius: 10.0)
+                  ],
+                ),
                 child: AspectRatio(
-                    aspectRatio: cardAspectRatio,
-                    child: Hero(
-                        tag: movies[i].id,
-                        child:
-                            Image.asset(movies[i].image, fit: BoxFit.cover))),
+                  aspectRatio: cardAspectRatio,
+                  child: Hero(
+                    tag: movies[i].id,
+                    child: Image.asset(movies[i].image, fit: BoxFit.cover),
+                  ),
+                ),
               ),
             ),
           );
