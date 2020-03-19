@@ -65,10 +65,20 @@ class _BrowseScreenState extends State<BrowseScreen> {
                     child: GestureDetector(
                         onTap: () => Navigator.push(
                               context,
+                              // PageRouteBuilder(
+                              //   pageBuilder:
+                              //       (context, animation1, animation2) =>
+                              //           DetailScreen(index),
+                              // ),
+                              // MyCustomPageRoute(
+                              //     previousPage: widget,
+                              //     builder: (context) => DetailScreen(index)),
                               PageRouteBuilder(
-                                pageBuilder:
-                                    (context, animation1, animation2) =>
-                                        DetailScreen(index),
+                                pageBuilder: (c, a1, a2) => DetailScreen(index),
+                                transitionsBuilder: (c, anim, a2, child) =>
+                                    FadeTransition(opacity: anim, child: child),
+                                transitionDuration:
+                                    Duration(milliseconds: 800),
                               ),
                             )),
                   ),

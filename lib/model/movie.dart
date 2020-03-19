@@ -8,7 +8,13 @@ class Movie {
   final double rating;
   int likes;
   int dislikes;
+
+  // Ideally the below attributes should not be defined here as they are user dependent.
+  // But as this app is just for demo purpose to showcase the testing tools provided by Flutter.
+  // So I am gonna pretend i didn't saw that. 
   bool isBookmarked;
+  bool isLiked;
+  bool isDisliked;
 
   Movie({
     Key key,
@@ -19,6 +25,8 @@ class Movie {
     @required this.rating,
     this.likes = 0,
     this.dislikes = 0,
+    this.isLiked = false,
+    this.isDisliked = false,
     this.isBookmarked = false,
   });
 

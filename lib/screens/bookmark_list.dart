@@ -7,6 +7,7 @@ class BookmarkList extends StatefulWidget {
 }
 
 class _BookmarkListState extends State<BookmarkList> {
+
   final _bookmarkList = movies.where((mov) => mov.isBookmarked).toList();
 
   @override
@@ -15,12 +16,18 @@ class _BookmarkListState extends State<BookmarkList> {
       color: Colors.white,
       child: Column(
         children: <Widget>[
-          SizedBox(height: 20),
-          Text(
-            'Bookmarks',
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              fontSize: 20,
+          SizedBox(height: 10),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'My Bookmarks',
+                style: TextStyle(
+                  fontSize: 26,
+                  fontFamily: 'Calibri',
+                ),
+              ),
             ),
           ),
           SingleChildScrollView(
@@ -31,11 +38,13 @@ class _BookmarkListState extends State<BookmarkList> {
                 itemBuilder: (context, index) {
                   return Dismissible(
                     key: new Key(_bookmarkList[index].title),
+                    background: Container(color: Colors.red,),
                     onDismissed: (direction) {
                       _bookmarkList[index].isBookmarked = false;
                       _bookmarkList.removeAt(index);
                     },
                     child: ListTile(
+                      leading: Icon(Icons.movie),
                       title: Text(_bookmarkList[index].title),
                     ),
                   );
