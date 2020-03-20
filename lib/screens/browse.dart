@@ -48,25 +48,29 @@ class _BrowseScreenState extends State<BrowseScreen> {
               width: sizeData.width * 0.75,
               child: Text(
                 movies[currentPage.toInt()].title,
+                key: ValueKey('movie_name'),
                 style: titleStyle,
               ),
             ),
           ),
+          // This is a glorified gesture.
           Positioned.fill(
             child: PageView.builder(
+              key: ValueKey('pageview'),
               itemCount: movies.length,
               controller: pageController,
               reverse: true,
               itemBuilder: (context, index) {
-                return GestureDetector(
-                  onTap: () => print('object'),
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(30, 40, 90, 200),
+                return Container(
+                  padding: EdgeInsets.fromLTRB(30, 40, 90, 200),
+                  child: Tooltip(
+                    message: 'movie_poster',
                     child: GestureDetector(
                       onTap: () => Navigator.push(
                         context,
                         PageRouteBuilder(
-                          pageBuilder: (ctx, anim1, anim2) => DetailScreen(index),
+                          pageBuilder: (ctx, anim1, anim2) =>
+                              DetailScreen(index),
                           transitionsBuilder: (ctx, anim1, anim2, child) =>
                               FadeTransition(opacity: anim1, child: child),
                           transitionDuration: Duration(milliseconds: 800),

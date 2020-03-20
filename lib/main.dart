@@ -41,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           Builder(
             builder: (context) => IconButton(
+                tooltip: 'bookmark_list_button',
                 icon: Icon(
                   Icons.collections_bookmark,
                   size: 30,

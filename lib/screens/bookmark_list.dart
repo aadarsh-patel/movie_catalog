@@ -45,7 +45,7 @@ class _BookmarkListState extends State<BookmarkList> {
                     },
                     child: ListTile(
                       leading: Icon(Icons.movie),
-                      title: Text(_bookmarkList[index].title),
+                      title: Text(_bookmarkList[index].title,key: ValueKey(index),),
                     ),
                   );
                 },

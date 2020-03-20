@@ -11,7 +11,7 @@ class Movie {
 
   // Ideally the below attributes should not be defined here as they are user dependent.
   // But as this app is just for demo purpose to showcase the testing tools provided by Flutter.
-  // So I am gonna pretend i didn't saw that.
+  // So, https://images.app.goo.gl/5rHyLzsqT1WGMWGe8
   bool isBookmarked;
   bool isLiked;
   bool isDisliked;
