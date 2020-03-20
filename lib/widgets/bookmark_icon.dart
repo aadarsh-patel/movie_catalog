@@ -22,6 +22,7 @@ class _BookmarkIconState extends State<BookmarkIcon> {
   @override
   Widget build(BuildContext context) {
     return IconButton(
+      tooltip: 'bookmark_button',
       icon: Icon(
         movies[widget.movieListIndex].isBookmarked ? Icons.bookmark : Icons.bookmark_border,
         size: 32,
