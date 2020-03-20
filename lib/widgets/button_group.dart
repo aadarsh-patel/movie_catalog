@@ -13,33 +13,13 @@ class ButtonGroup extends StatefulWidget {
 class _ButtonGroupState extends State<ButtonGroup> {
   void _onLikeTap() {
     setState(() {
-      if (movies[widget.index].isLiked) {
-        movies[widget.index].isLiked = false;
-        movies[widget.index].likes -= 1;
-      } else {
-        if (movies[widget.index].isDisliked) {
-          movies[widget.index].isDisliked = false;
-          movies[widget.index].dislikes -= 1;
-        }
-        movies[widget.index].isLiked = true;
-        movies[widget.index].likes += 1;
-      }
+      movies[widget.index].like();
     });
   }
 
   void _onDislikeTap() {
     setState(() {
-      if (movies[widget.index].isDisliked) {
-        movies[widget.index].isDisliked = false;
-        movies[widget.index].dislikes -= 1;
-      } else {
-        if (movies[widget.index].isLiked) {
-          movies[widget.index].isLiked = false;
-          movies[widget.index].likes -= 1;
-        }
-        movies[widget.index].isDisliked = true;
-        movies[widget.index].dislikes += 1;
-      }
+      movies[widget.index].dislike();
     });
   }
 

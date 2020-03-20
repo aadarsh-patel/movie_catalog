@@ -11,7 +11,7 @@ class Movie {
 
   // Ideally the below attributes should not be defined here as they are user dependent.
   // But as this app is just for demo purpose to showcase the testing tools provided by Flutter.
-  // So I am gonna pretend i didn't saw that. 
+  // So I am gonna pretend i didn't saw that.
   bool isBookmarked;
   bool isLiked;
   bool isDisliked;
@@ -30,6 +30,31 @@ class Movie {
     this.isBookmarked = false,
   });
 
-  void like() => likes++;
-  void dislike() => dislikes++;
+  void like() {
+    if (isLiked) {
+      isLiked = false;
+      likes -= 1;
+    } else {
+      if (isDisliked) {
+        isDisliked = false;
+        dislikes -= 1;
+      }
+      isLiked = true;
+      likes += 1;
+    }
+  }
+
+  void dislike() {
+    if (isDisliked) {
+      isDisliked = false;
+      dislikes -= 1;
+    } else {
+      if (isLiked) {
+        isLiked = false;
+        likes -= 1;
+      }
+      isDisliked = true;
+      dislikes += 1;
+    }
+  }
 }
