@@ -12,13 +12,6 @@ Here, `+4` tells that 4 tests successfully passed.  <br/>
 Similarly a `+3 -2` would mean that 3 tests passed and 2 tests failed.  <br/>
 Unit tests are very fast.  <br/>
 
-I have included 4 tests in unit tests that are as follows,<br/>
-
-`00:00 +0: Movie model tests:  Like function should increment likes and undo the changes on calling twice` <br/>
-`00:00 +1: Movie model tests:  Dislike function should increment dislikes and undo the changes on calling twice` <br/>
-`00:00 +2: Movie model tests:  Calling Like function should automatically undo the changes done by Dislike function` <br/>
-`00:00 +3: Movie model tests:  Calling Dislike function should automatically undo the changes done by Like function` <br/>
-
 
 ### 2. Widget test
 Widget tests are for..... testing the widgets. <br/>
