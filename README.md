@@ -1,16 +1,17 @@
-# movie_catalog
+# Movie Catalog
 
-A new Flutter project.
+A demo application made by me to learn about testing in Flutter.
 
-## Getting Started
+## There are three types of automated test in Flutter,
 
-This project is a starting point for a Flutter application.
+### 1. Unit test
+Unit tests are for testing a single function, method or class.
+To run unit test on this app, run command `flutter test test/unit_test.dart` 
+On successful completion of the test you will get an output `00:08 +4: All tests passed!`
 
-A few resources to get you started if this is your first Flutter project:
+I have included 4 tests in unit tests that are as follows,
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I/flutter (23896): 00:00 +0: Movie model tests:  Like function should increment likes and undo the changes on calling twice
+I/flutter (23896): 00:00 +1: Movie model tests:  Dislike function should increment dislikes and undo the changes on calling twice
+I/flutter (23896): 00:00 +2: Movie model tests:  Calling Like function should automatically undo the changes done by Dislike function
+I/flutter (23896): 00:00 +3: Movie model tests:  Calling Dislike function should automatically undo the changes done by Like function
