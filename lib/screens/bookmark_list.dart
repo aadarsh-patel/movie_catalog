@@ -13,7 +13,7 @@ class _BookmarkListState extends State<BookmarkList> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: Color(0xFF1b1e44),
       child: Column(
         children: <Widget>[
           SizedBox(height: 10),
@@ -26,13 +26,14 @@ class _BookmarkListState extends State<BookmarkList> {
                 style: TextStyle(
                   fontSize: 26,
                   fontFamily: 'Calibri',
+                  color: Colors.white,
                 ),
               ),
             ),
           ),
           SingleChildScrollView(
             child: Container(
-              height: 200,
+              height: MediaQuery.of(context).size.height*0.7,
               child: ListView.builder(
                 itemCount: _bookmarkList.length,
                 itemBuilder: (context, index) {
@@ -44,8 +45,8 @@ class _BookmarkListState extends State<BookmarkList> {
                       _bookmarkList.removeAt(index);
                     },
                     child: ListTile(
-                      leading: Icon(Icons.movie),
-                      title: Text(_bookmarkList[index].title,key: ValueKey(index),),
+                      leading: Icon(Icons.movie, color: Colors.white,size: 32),
+                      title: Text(_bookmarkList[index].title,key: ValueKey(index),style: TextStyle(color: Colors.white, fontSize: 24),),
                     ),
                   );
                 },

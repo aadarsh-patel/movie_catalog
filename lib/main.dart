@@ -34,8 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(
           'Movie Catalog',
           style: TextStyle(
-            fontSize: 26,
-            fontWeight: FontWeight.w700,
+            fontSize: 38,
+            fontWeight: FontWeight.w300,
           ),
         ),
         actions: [
@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 tooltip: 'bookmark_list_button',
                 icon: Icon(
                   Icons.collections_bookmark,
-                  size: 30,
+                  size: 34,
                 ),
                 onPressed: () => showBottomSheet(
                       context: context,

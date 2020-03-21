@@ -16,6 +16,8 @@ List<Movie> movies = [
         'In this third installment of the adrenaline-fueled action franchise, skilled assassin John Wick (Keanu Reeves) returns with a \$14 million price tag on his head and an army of bounty-hunting killers on his trail. After killing a member of the shadowy international assassin\'s guild, the High Table, John Wick is excommunicado, but the world\'s most ruthless hit men and women await his every turn. ',
     image: 'assets/images/johnwick.jpg',
     rating: 7.5,
+    likes: 23,
+    dislikes: 3,
   ),
   Movie(
       id: 3,
