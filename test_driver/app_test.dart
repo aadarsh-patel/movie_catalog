@@ -22,7 +22,7 @@ void main() {
 
       final String movieBeforeSwipe = await driver.getText(find.byValueKey('movie_name'));
       expect(await driver.getText(find.byValueKey('movie_name')), movieBeforeSwipe);
-      await driver.scroll(find.byValueKey('pageview'), -400, 0, Duration(seconds: 2));
+      await driver.scroll(find.byValueKey('pageview'), -400, 0, Duration(seconds: 1,milliseconds: 500,));
       expect(await driver.getText(find.byValueKey('movie_name')), isNot(equals(movieBeforeSwipe)));
       
     });
@@ -48,7 +48,7 @@ void main() {
       final movieToDelete = await driver.getText(find.byValueKey(0));
       
       expect(await driver.getText(find.byValueKey(0)), movieToDelete);
-      await driver.scroll(find.byValueKey(0), -500, 0, Duration(seconds: 2));
+      await driver.scroll(find.byValueKey(0), -500, 0, Duration(seconds: 1, milliseconds: 500,));
       
       //expect(await driver.getText(find.byValueKey(0)), isNot(equals(movieToDelete)));
 

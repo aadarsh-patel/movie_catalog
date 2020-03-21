@@ -25,10 +25,8 @@ class _ButtonGroupState extends State<ButtonGroup> {
 
   @override
   Widget build(BuildContext context) {
-    Color _likeButtonColor =
-        movies[widget.index].isLiked ? Colors.green : Colors.grey;
-    Color _dislikeButtonColor =
-        movies[widget.index].isDisliked ? Colors.red : Colors.grey;
+    Color _likeButtonColor = movies[widget.index].isLiked ? Colors.green : Colors.grey;
+    Color _dislikeButtonColor = movies[widget.index].isDisliked ? Colors.red : Colors.grey;
 
     return Container(
       child: Row(
