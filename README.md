@@ -14,12 +14,9 @@ Unit tests are very fast.  <br/>
 
 
 ### 2. Widget test
-Widget tests are for..... testing the widgets. <br/>
-It is to check whether our widget is working as we intended it to be or not. <br/>
-To run widget test on this app, run command `flutter run test/widget_test.dart` <br/>
-Widget tests are slower than unit tests but still fast enough that it is hard to see the tap on BookmarkIcon button.
-
-![](https://github.com/aadarsh-patel/movie_catalog/blob/master/gifs/widget_test.gif)
+|     |        |
+|-----|--------|
+|Widget tests are for..... testing the widgets. <br/>It is to check whether our widget is working as we intended it to be or not. <br/>To run widget test on this app, run command `flutter run test/widget_test.dart` <br/>Widget tests are slower than unit tests but still fast enough that it is hard to see the tap on BookmarkIcon button.|![](https://github.com/aadarsh-patel/movie_catalog/blob/master/gifs/widget_test.gif)|
 
 ### 3. Integration test
 Integration tests are to test how individual pieces work together as a whole. <br/>
