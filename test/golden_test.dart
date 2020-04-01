@@ -1,8 +1,8 @@
-import 'dart:io';
-import 'dart:typed_data';
+// import 'dart:io';
+// import 'dart:typed_data';
+// import 'package:flutter/services.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:movie_catalog/main.dart';
 
@@ -11,7 +11,7 @@ void main() {
       TestWidgetsFlutterBinding.ensureInitialized();
 
   setUp(() async {
-    _loadCalibriFont();
+    //_loadCalibriFont();
 
     binding.window.physicalSizeTestValue = Size(500, 800);
     binding.window.devicePixelRatioTestValue = 1.2;
@@ -37,18 +37,16 @@ void main() {
   });
 }
 
-void _loadCalibriFont() async {
-  final fontFileDirectory = Directory('assets/fonts/Calibri');
-  final fontLoader = FontLoader('Calibri');
-
-  for (var file in fontFileDirectory.listSync()) {
-    if (file.path.endsWith('.ttf')) {
-      final fontData = File(file.path)
-          .readAsBytes()
-          .then((bytes) => ByteData.view(Uint8List.fromList(bytes).buffer));
-      fontLoader.addFont(fontData);
-    }
-  }
-
-  await fontLoader.load();
-}
+// void _loadCalibriFont() async {
+//   final fontFileDirectory = Directory('assets/fonts/Calibri');
+//   final fontLoader = FontLoader('Calibri');
+//   for (var file in fontFileDirectory.listSync()) {
+//     if (file.path.endsWith('.ttf')) {
+//       final fontData = File(file.path)
+//           .readAsBytes()
+//           .then((bytes) => ByteData.view(Uint8List.fromList(bytes).buffer));
+//       fontLoader.addFont(fontData);
+//     }
+//   }
+//   await fontLoader.load();
+// }
