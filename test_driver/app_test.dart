@@ -19,7 +19,7 @@ void main() {
     });
 
     test('Swiping left at browse screen changes movie selection', () async {
-
+      
       final String movieBeforeSwipe = await driver.getText(find.byValueKey('movie_name'));
       expect(await driver.getText(find.byValueKey('movie_name')), movieBeforeSwipe);
       await driver.scroll(find.byValueKey('pageview'), -400, 0, Duration(seconds: 1,milliseconds: 500,));

@@ -61,8 +61,8 @@ flutter:
   fonts:
     - family: Calibri
       fonts:
-        - asset: assets/fonts/Calibri-Regular.ttf
-        - asset: assets/fonts/Calibri-Bold.ttf
+        - asset: assets/fonts/Calibri/Calibri-Regular.ttf
+        - asset: assets/fonts/Calibri/Calibri-Bold.ttf
           weight: 700
   #   - family: Schyler
   #     fonts:
