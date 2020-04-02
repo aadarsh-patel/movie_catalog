@@ -15,9 +15,12 @@
    * [Widget test](#2-widget-test)  
    * [Integration test](#3-integration-test)
  * [Golden test](#golden-test)
- * [Reference](#refrence)
+ * [Reference](#reference)
 
 ---
+
+<div>
+<article>
 
 ### There are three types of automated test in Flutter
 
@@ -29,14 +32,16 @@ Here, `+4` tells that 4 tests successfully passed.  <br/>
 Similarly a `+3 -2` would mean that 3 tests passed and 2 tests failed.  <br/>
 Unit tests are very fast.  <br/>
 
----
+</article>
+<article>
 
 ### 2. Widget test
 Widget test is to check whether our widget is working as we intended it to be or not. <br/>To run widget test on this app, run command `flutter run test/widget_test.dart` <br/>Widget tests are slower than unit tests but still fast enough that it is hard to see the tap on BookmarkIcon button.
 
 <img src="https://github.com/aadarsh-patel/movie_catalog/blob/master/gifs/widget_test.gif?raw=true" align = "right" height = "400px">
 
----
+</article>
+<article>
 
 ### 3. Integration test
 Integration tests are to test how individual pieces work together as a whole. <br/>
@@ -47,7 +52,8 @@ Integration tests are the slowest and also the coolest test according to me. <br
 
 <img src="https://github.com/aadarsh-patel/movie_catalog/blob/master/gifs/integration_test.gif?raw=true">
 
----
+</article>
+<article>
 
 ### Golden test
 
@@ -62,8 +68,12 @@ Here are the goldens which were generated for this app,
 <img src="https://github.com/aadarsh-patel/movie_catalog/blob/master/test/goldens/details.png?raw=true"  align = "right" height = "300px">
 <br>
 
----
+</article>
+<article>
 
 #### Reference
 
 To know more about testing, refer to official Flutter documentation [flutter.dev/docs/testing](https://flutter.dev/docs/testing).
+
+</article>
+</div>
