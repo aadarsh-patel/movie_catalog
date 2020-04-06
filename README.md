@@ -4,7 +4,10 @@
    <a href="https://flutter.dev">  
     <img src="https://img.shields.io/badge/Platform-Flutter-yellow.svg"  
       alt="Platform" />  
-  </a>   
+  </a>  
+  <a href="https://codemagic.io/apps/5e880067bccbec142240bff2/5e880067bccbec142240bff1/latest_build">  
+   <img src="https://api.codemagic.io/apps/5e880067bccbec142240bff2/5e880067bccbec142240bff1/status_badge.svg" alt="Platform" />  
+  </a>
 </div>
 <br> 
 
