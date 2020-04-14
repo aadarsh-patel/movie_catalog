@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:movie_catalog/main.dart';
+import 'package:movie_catalog/screens/detail.dart';
 
 void main() {
   final TestWidgetsFlutterBinding binding =
@@ -12,13 +13,13 @@ void main() {
 
   setUp(() async {
     //_loadCalibriFont();
-
-    binding.window.physicalSizeTestValue = Size(500, 800);
-    binding.window.devicePixelRatioTestValue = 1.2;
+    binding.window.physicalSizeTestValue = Size(1000, 1800);
+    binding.window.devicePixelRatioTestValue = 2.6;
   });
 
   testWidgets('Home screen matches golden file', (WidgetTester tester) async {
     await tester.pumpWidget(MyApp());
+    await tester.pumpAndSettle();
     await expectLater(
       find.byType(MyApp),
       matchesGoldenFile('goldens/home.png'),
@@ -27,11 +28,14 @@ void main() {
 
   testWidgets('Details screen matches golden file',
       (WidgetTester tester) async {
-    await tester.pumpWidget(MyApp());
-    await tester.tap(find.byTooltip('movie_poster'));
-    await tester.pumpAndSettle();
+    await tester.pumpWidget(MediaQuery(
+      data: MediaQueryData(),
+      child: MaterialApp(
+        home: DetailScreen(0),
+      ),
+    ));
     await expectLater(
-      find.byType(MyApp),
+      find.byType(DetailScreen),
       matchesGoldenFile('goldens/details.png'),
     );
   });
