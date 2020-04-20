@@ -47,19 +47,21 @@ void main() {
   });
 }
 
-
 Future<void> _loadFonts() async {
   //https://github.com/flutter/flutter/issues/20907
+  
   // if (Directory.current.path.endsWith('/test')) {
   //   Directory.current = Directory.current.parent;
   // }
 
-  final fontData = File(Directory.current.path + '/assets/fonts/Calibri/Calibri-Regular.ttf')
-      .readAsBytes()
-      .then((bytes) => ByteData.view(Uint8List.fromList(bytes).buffer));
-  final fontData2 = File(Directory.current.path + '/assets/fonts/Calibri/Calibri-Bold.ttf')
-      .readAsBytes()
-      .then((bytes) => ByteData.view(Uint8List.fromList(bytes).buffer));
+  final fontData =
+      File(Directory.current.path + '/assets/fonts/Calibri/Calibri-Regular.ttf')
+          .readAsBytes()
+          .then((bytes) => ByteData.view(Uint8List.fromList(bytes).buffer));
+  final fontData2 =
+      File(Directory.current.path + '/assets/fonts/Calibri/Calibri-Bold.ttf')
+          .readAsBytes()
+          .then((bytes) => ByteData.view(Uint8List.fromList(bytes).buffer));
   final fontLoader = FontLoader('Calibri')
     ..addFont(fontData)
     ..addFont(fontData2);
