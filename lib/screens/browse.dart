@@ -38,48 +38,54 @@ class _BrowseScreenState extends State<BrowseScreen> {
           end: Alignment.bottomRight,
         ),
       ),
-      child: Stack(
-        children: <Widget>[
-          CardScrollWidget(currentPage),
-          Positioned(
-            left: 30,
-            top: 460,
+      child: Column(
+        children: [
+          Stack(
+            children: <Widget>[
+              CardScrollWidget(currentPage),
+
+              // This is a glorified gesture.
+              Positioned.fill(
+                child: PageView.builder(
+                  key: ValueKey('pageview'),
+                  itemCount: movies.length,
+                  controller: pageController,
+                  reverse: true,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      padding: EdgeInsets.fromLTRB(30, 40, 90, 200),
+                      child: Tooltip(
+                        message: 'movie_poster',
+                        child: GestureDetector(
+                          onTap: () => Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                              pageBuilder: (ctx, anim1, anim2) =>
+                                  DetailScreen(index),
+                              transitionsBuilder: (ctx, anim1, anim2, child) =>
+                                  FadeTransition(opacity: anim1, child: child),
+                              transitionDuration: Duration(milliseconds: 800),
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
             child: Container(
+              padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
               width: sizeData.width * 0.75,
               child: Text(
                 movies[currentPage.toInt()].title,
                 key: ValueKey('movie_name'),
                 style: titleStyle,
+                textAlign: TextAlign.center,
               ),
-            ),
-          ),
-          // This is a glorified gesture.
-          Positioned.fill(
-            child: PageView.builder(
-              key: ValueKey('pageview'),
-              itemCount: movies.length,
-              controller: pageController,
-              reverse: true,
-              itemBuilder: (context, index) {
-                return Container(
-                  padding: EdgeInsets.fromLTRB(30, 40, 90, 200),
-                  child: Tooltip(
-                    message: 'movie_poster',
-                    child: GestureDetector(
-                      onTap: () => Navigator.push(
-                        context,
-                        PageRouteBuilder(
-                          pageBuilder: (ctx, anim1, anim2) =>
-                              DetailScreen(index),
-                          transitionsBuilder: (ctx, anim1, anim2, child) =>
-                              FadeTransition(opacity: anim1, child: child),
-                          transitionDuration: Duration(milliseconds: 800),
-                        ),
-                      ),
-                    ),
-                  ),
-                );
-              },
             ),
           ),
         ],
