@@ -11,8 +11,8 @@ void main() {
   final TestWidgetsFlutterBinding binding =
       TestWidgetsFlutterBinding.ensureInitialized();
 
-  setUp(() async {
-    _loadCalibriFont();
+  setUp(() {
+    _loadFonts();
     binding.window.physicalSizeTestValue = Size(540, 960);
     binding.window.devicePixelRatioTestValue = 1;
   });
@@ -46,16 +46,21 @@ void main() {
   });
 }
 
-void _loadCalibriFont() async {
-  final fontFileDirectory = Directory('test/test_fonts/Calibri');
-  final fontLoader = FontLoader('Calibri');
-  for (var file in fontFileDirectory.listSync()) {
-    if (file.path.endsWith('.ttf')) {
-      final fontData = File(file.path)
-          .readAsBytes()
-          .then((bytes) => ByteData.view(Uint8List.fromList(bytes).buffer));
-      fontLoader.addFont(fontData);
-    }
-  }
+
+Future<void> _loadFonts() async {
+  //https://github.com/flutter/flutter/issues/20907
+  // if (Directory.current.path.endsWith('/test')) {
+  //   Directory.current = Directory.current.parent;
+  // }
+
+  final fontData = File(Directory.current.path + '/assets/fonts/Calibri/Calibri-Regular.ttf')
+      .readAsBytes()
+      .then((bytes) => ByteData.view(Uint8List.fromList(bytes).buffer));
+  final fontData2 = File(Directory.current.path + '/assets/fonts/Calibri/Calibri-Bold.ttf')
+      .readAsBytes()
+      .then((bytes) => ByteData.view(Uint8List.fromList(bytes).buffer));
+  final fontLoader = FontLoader('Calibri')
+    ..addFont(fontData)
+    ..addFont(fontData2);
   await fontLoader.load();
 }
