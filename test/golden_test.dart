@@ -11,8 +11,9 @@ void main() {
   final TestWidgetsFlutterBinding binding =
       TestWidgetsFlutterBinding.ensureInitialized();
 
+  _loadFonts();
+
   setUp(() {
-    _loadFonts();
     binding.window.physicalSizeTestValue = Size(540, 960);
     binding.window.devicePixelRatioTestValue = 1;
   });
