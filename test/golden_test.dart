@@ -47,7 +47,7 @@ void main() {
 }
 
 void _loadCalibriFont() async {
-  final fontFileDirectory = Directory('assets/fonts/Calibri');
+  final fontFileDirectory = Directory('test/test_fonts/Calibri');
   final fontLoader = FontLoader('Calibri');
   for (var file in fontFileDirectory.listSync()) {
     if (file.path.endsWith('.ttf')) {
