@@ -8,9 +8,11 @@ import 'package:path/path.dart' as p;
 import 'package:movie_catalog/screens/browse.dart';
 import 'package:movie_catalog/screens/detail.dart';
 
-void main() {
+void main() async {
   final TestWidgetsFlutterBinding binding =
       TestWidgetsFlutterBinding.ensureInitialized();
+
+  await _loadFonts();
 
   setUp(() {
     binding.window.physicalSizeTestValue = Size(540, 960);
@@ -18,7 +20,6 @@ void main() {
   });
 
   testWidgets('Browse screen matches golden file', (WidgetTester tester) async {
-    await _loadFonts();
     await tester.pumpWidget(MediaQuery(
       data: MediaQueryData(),
       child: MaterialApp(
@@ -34,7 +35,6 @@ void main() {
 
   testWidgets('Details screen matches golden file',
       (WidgetTester tester) async {
-    await _loadFonts();
     await tester.pumpWidget(MediaQuery(
       data: MediaQueryData(),
       child: MaterialApp(
@@ -55,8 +55,6 @@ Future<void> _loadFonts() async {
     Directory.current.path,
     Directory.current.path.endsWith('test') ? '' : 'test',
   );
-
-  print('$testDirectory/test_fonts/Calibri/Calibri-Regular.ttf');
 
   final fontData = File('$testDirectory/test_fonts/Calibri/Calibri-Regular.ttf')
       .readAsBytes()
