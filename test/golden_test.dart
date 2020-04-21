@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:path/path.dart' as p;
 import 'package:movie_catalog/screens/browse.dart';
 import 'package:movie_catalog/screens/detail.dart';
 
@@ -49,17 +50,18 @@ void main() {
 
 Future<void> _loadFonts() async {
   //https://github.com/flutter/flutter/issues/20907
-  
+
   // if (Directory.current.path.endsWith('/test')) {
   //   Directory.current = Directory.current.parent;
   // }
+  //print(p.current + '/assets/fonts/Calibri/Calibri-Regular.ttf');
 
   final fontData =
-      File(Directory.current.path + '/assets/fonts/Calibri/Calibri-Regular.ttf')
+      File(p.current + '/assets/fonts/Calibri/Calibri-Regular.ttf')
           .readAsBytes()
           .then((bytes) => ByteData.view(Uint8List.fromList(bytes).buffer));
   final fontData2 =
-      File(Directory.current.path + '/assets/fonts/Calibri/Calibri-Bold.ttf')
+      File(p.current + '/assets/fonts/Calibri/Calibri-Bold.ttf')
           .readAsBytes()
           .then((bytes) => ByteData.view(Uint8List.fromList(bytes).buffer));
   final fontLoader = FontLoader('Calibri')
