@@ -12,14 +12,13 @@ void main() {
   final TestWidgetsFlutterBinding binding =
       TestWidgetsFlutterBinding.ensureInitialized();
 
-  _loadFonts();
-
   setUp(() {
     binding.window.physicalSizeTestValue = Size(540, 960);
     binding.window.devicePixelRatioTestValue = 1;
   });
 
   testWidgets('Browse screen matches golden file', (WidgetTester tester) async {
+    await _loadFonts();
     await tester.pumpWidget(MediaQuery(
       data: MediaQueryData(),
       child: MaterialApp(
@@ -35,6 +34,7 @@ void main() {
 
   testWidgets('Details screen matches golden file',
       (WidgetTester tester) async {
+    await _loadFonts();
     await tester.pumpWidget(MediaQuery(
       data: MediaQueryData(),
       child: MaterialApp(
